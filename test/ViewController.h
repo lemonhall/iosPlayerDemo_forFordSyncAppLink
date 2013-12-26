@@ -6,8 +6,17 @@
 //  Copyright (c) 2013年 lemonhall. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<AVAudioPlayerDelegate>
+{
+    BOOL musicIsPlaying;
+    AVAudioPlayer *audioPlayer;
+    __weak IBOutlet UIProgressView *pBar;
+    __weak IBOutlet UIImageView *imgTitle;
+
+}
+
+
 
 @end

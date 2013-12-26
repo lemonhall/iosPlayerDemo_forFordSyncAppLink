@@ -18,12 +18,52 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    musicIsPlaying = NO;
+    NSError *error;
+    NSURL *path = [[NSBundle mainBundle] URLForResource:@"Sail" withExtension:@"mp3"];
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:path error:&error];
+    audioPlayer.delegate = self;
+    audioPlayer.volume = 0.5;
+    //[audioPlayer prepareToPlay];
+    pBar.progress = 0;
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimerTick:) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)onTimerTick:(id)sender {
+    if (![audioPlayer isPlaying]) {
+        return;
+    }
+    
+    NSTimeInterval totalTime = [audioPlayer duration];
+    NSTimeInterval currentTime = [audioPlayer currentTime];
+    CGFloat progress = currentTime / totalTime;
+    pBar.progress = progress;
+}
+
+- (IBAction)play:(id)sender {
+    if (musicIsPlaying) {
+        //pause music
+        [sender setTitle:@"pause" forState:UIControlStateNormal];
+        musicIsPlaying = NO;
+        [audioPlayer pause];
+        NSLog(@"audioPlayer pause");
+    }
+    else {
+        //play music
+        [sender setTitle:@"playing" forState:UIControlStateNormal];
+        musicIsPlaying = YES;
+        [audioPlayer play];
+        NSLog(@"audioPlayer play");
+        //NSURL *imageURL = [[NSBundle mainBundle] URLForResource:@"Sail" withExtension:@"jpg"];
+        UIImage *image = [UIImage imageNamed: @"Sail.jpg"];
+        [imgTitle setImage:(image)];
+    }
 }
 
 @end

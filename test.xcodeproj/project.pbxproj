@@ -22,6 +22,8 @@
 		8F1CCA92186C406900C6DF58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1CCA71186C406900C6DF58 /* UIKit.framework */; };
 		8F1CCA9A186C406900C6DF58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F1CCA98186C406900C6DF58 /* InfoPlist.strings */; };
 		8F1CCA9C186C406900C6DF58 /* testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CCA9B186C406900C6DF58 /* testTests.m */; };
+		8F1CCAA6186C412700C6DF58 /* Sail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F1CCAA5186C412700C6DF58 /* Sail.mp3 */; };
+		8F1CCAA8186C440900C6DF58 /* sail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F1CCAA7186C440900C6DF58 /* sail.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		8F1CCA97186C406900C6DF58 /* testTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "testTests-Info.plist"; sourceTree = "<group>"; };
 		8F1CCA99186C406900C6DF58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F1CCA9B186C406900C6DF58 /* testTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testTests.m; sourceTree = "<group>"; };
+		8F1CCAA5186C412700C6DF58 /* Sail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sail.mp3; sourceTree = "<group>"; };
+		8F1CCAA7186C440900C6DF58 /* sail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sail.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 		8F1CCA74186C406900C6DF58 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8F1CCAA7186C440900C6DF58 /* sail.jpg */,
+				8F1CCAA5186C412700C6DF58 /* Sail.mp3 */,
 				8F1CCA75186C406900C6DF58 /* test-Info.plist */,
 				8F1CCA76186C406900C6DF58 /* InfoPlist.strings */,
 				8F1CCA79186C406900C6DF58 /* main.m */,
@@ -233,7 +239,9 @@
 			files = (
 				8F1CCA84186C406900C6DF58 /* Main_iPad.storyboard in Resources */,
 				8F1CCA89186C406900C6DF58 /* Images.xcassets in Resources */,
+				8F1CCAA6186C412700C6DF58 /* Sail.mp3 in Resources */,
 				8F1CCA81186C406900C6DF58 /* Main_iPhone.storyboard in Resources */,
+				8F1CCAA8186C440900C6DF58 /* sail.jpg in Resources */,
 				8F1CCA78186C406900C6DF58 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
