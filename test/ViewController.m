@@ -63,6 +63,31 @@
         //NSURL *imageURL = [[NSBundle mainBundle] URLForResource:@"Sail" withExtension:@"jpg"];
         UIImage *image = [UIImage imageNamed: @"Sail.jpg"];
         [imgTitle setImage:(image)];
+//        
+//        NSString *urlAsString = @"http://www.douban.com"; NSURL *url = [NSURL URLWithString:urlAsString];
+//        NSURLRequest *urlRequest = [NSURLRequest
+//                                    requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30.0f];
+//        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//        [NSURLConnection sendAsynchronousRequest:urlRequest queue:queue completionHandler:^(NSURLResponse *response,
+//                                                                                            NSData *data, NSError *error) {
+//            if ([data length] >0 && error == nil){
+//                NSString *html = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//                NSLog(@"HTML = %@", html); }
+//            else if ([data length] == 0 && error == nil){
+//                NSLog(@"Nothing was downloaded."); }
+//            else if (error != nil){
+//                NSLog(@"Error happened = %@", error); }
+//        }];
+        
+        
+        MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:@"www.douban.com" customHeaderFields:nil];
+        MKNetworkOperation *op = [engine operationWithPath:@"/" params:nil httpMethod:@"GET" ssl:NO];
+        [op addCompletionHandler:^(MKNetworkOperation *operation) {
+            NSLog(@"[operation responseData]-->>%@", [operation responseString]);
+        }errorHandler:^(MKNetworkOperation *errorOp, NSError* err) {
+            NSLog(@"MKNetwork request error : %@", [err localizedDescription]);
+        }];  
+        [engine enqueueOperation:op];
     }
 }
 

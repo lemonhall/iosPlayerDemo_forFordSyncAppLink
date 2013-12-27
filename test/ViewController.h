@@ -7,6 +7,7 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
+#import "MKNetworkKit.h"
 
 @interface ViewController : UIViewController<AVAudioPlayerDelegate>
 {
